@@ -79,6 +79,62 @@ const list = {
   }
 };
 ```
+***Example***
+### Step 1 Create a node structure
+```jsx
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+```
+
+### Step 2 Create nodes
+```jsx
+const first = new Node(10);
+const second = new Node(20);
+const third = new Node(30);
+```
+
+### Step 3 Link the nodes
+```jsx
+first.next = second;
+second.next = third;
+```
+
+Now the list looks like
+
+10 → 20 → 30 → null
+
+
+### Traverse linked list
+```jsx
+let current = first;
+
+while (current !== null) {
+  console.log(current.value);
+  current = current.next;
+}
+
+//Output
+//10
+//20
+//30
+```
+
+### Insert at beginning
+```jsx
+const newNode = new Node(5);
+newNode.next = first;
+
+//5 → 10 → 20 → 30 → null
+```
+
+### Remove second node
+```jsx
+first.next = second.next;
+
+//10 → 30 → null
+```
 <br>
 
 ## 8. **Tree**
